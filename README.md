@@ -1,2 +1,3 @@
-# personal-web
-My Personal Web
+# Personal Site
+
+This repo contains my personal site built using Hugo.
