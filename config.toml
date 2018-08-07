@@ -71,7 +71,7 @@ youtube = "UCfBCknEWK8SJXFTfeYFwttQ"
 enable = false
 
 [taxonomies]
-author = "Giovanni Sakti"
+author = "authors"
 category = "categories"
 series = "series"
 tag = "tags"
