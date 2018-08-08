@@ -1,11 +1,10 @@
 ---
-title: "Integrating Rails and Angularjs Part 1 Structure"
+title: "Integrating Rails and AngularJS, Part 1: Structure"
 authors: ["gio"]
 date: 2013-03-29T04:00:00+07:00
 tags:
 - rails
 - angular
-draft: true
 ---
 
 *This is part one of several more parts regarding this topic. I will post at one-week interval for this series*
