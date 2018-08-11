@@ -4,7 +4,7 @@ authors: ["gio"]
 date: 2018-08-08T06:00:00+07:00
 ---
 
-![](http://res.cloudinary.com/mightygio/image/upload/c_scale,h_600,w_800/v1389916710/talks-jakartajs-december_khqjxq.jpg)
+![Speaking in JakartaJS](http://res.cloudinary.com/mightygio/image/upload/c_scale,h_600,w_800/v1389916710/talks-jakartajs-december_khqjxq.jpg)
 
 Hi, my name is **Giovanni Sakti** and people call me **Gio**.
 
