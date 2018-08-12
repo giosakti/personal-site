@@ -1,7 +1,6 @@
 ---
 title: "Speaking"
 authors: ["gio"]
-date: 2018-08-12T07:17:35+07:00
 tags:
 - speaking
 ---
