@@ -92,10 +92,10 @@ identifier = "blog"
 url = "/blog"
 
 [[menu.main]]
-name = "Notes"
+name = "Speaking"
 weight = -80
-identifier = "notes"
-url = "/notes"
+identifier = "speaking"
+url = "/speaking"
 
 [[menu.main]]
 name = "About"
