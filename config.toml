@@ -98,8 +98,14 @@ identifier = "speaking"
 url = "/speaking"
 
 [[menu.main]]
-name = "About"
+name = "Notes"
 weight = -70
+identifier = "notes"
+url = "/notes"
+
+[[menu.main]]
+name = "About"
+weight = -60
 identifier = "about"
 url = "/about"
 
