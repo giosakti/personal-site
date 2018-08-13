@@ -7,7 +7,7 @@ tags:
 - angular
 ---
 
-![Speaking in JakartaJS](http://res.cloudinary.com/mightygio/image/upload/c_scale,h_600,w_800/v1389916710/talks-jakartajs-december_khqjxq.jpg)
+![Speaking in JakartaJS](https://res.cloudinary.com/mightygio/image/upload/c_scale,h_600,w_800/v1389916710/talks-jakartajs-december_khqjxq.jpg)
 
 I'm sharing the slide for my last talk regarding AngularJS in December.
 

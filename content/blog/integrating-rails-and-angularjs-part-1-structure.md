@@ -15,9 +15,9 @@ I'm a top-down person. So, whenever I try to understand or create a new concept,
 
 Before, I go any further, I want to explain on why I use Rails as an API back-end. You may want to argue that Rails isn't lightweight enough for that purpose and I agree, performance isn't exactly one of Rails strong suit. However, other than the obvious reason that my team is already familiar with it, Rails have some advantages that I find it hard to substitute.
 
-**First** is the thousands (or tenth of thousands) gems, which is readily available in [Rubygems](http://rubygems.org/). I believe Rubygems is the perfect example of an excellent code-reuse platform. I love how easy it is to integrate my Rails application with those gems, which have significant effect in reducing boilerplate from my application. Oh, and have I mention how vibrant the community that supported those gems?
+**First** is the thousands (or tenth of thousands) gems, which is readily available in [Rubygems](https://rubygems.org/). I believe Rubygems is the perfect example of an excellent code-reuse platform. I love how easy it is to integrate my Rails application with those gems, which have significant effect in reducing boilerplate from my application. Oh, and have I mention how vibrant the community that supported those gems?
 
-**Second**, I like the "Rails-way". I know how opinionated it is, but that's OK with me because I tend to agree with most of its opinion. Although, I can relate to people whom disagree, because they will find it very hard to use Rails and then they have to customize the hell out of it. Well as for me, it enables me to "write less for more" and due to my [RSI](http://en.wikipedia.org/wiki/Repetitive_strain_injury), less for more is very important.
+**Second**, I like the "Rails-way". I know how opinionated it is, but that's OK with me because I tend to agree with most of its opinion. Although, I can relate to people whom disagree, because they will find it very hard to use Rails and then they have to customize the hell out of it. Well as for me, it enables me to "write less for more" and due to my [RSI](https://en.wikipedia.org/wiki/Repetitive_strain_injury), less for more is very important.
 
 ## Starting new Rails application
 
@@ -129,10 +129,10 @@ end
 So let's download latest angular library and put it inside the `vendor/assets/javascripts` folder:
 
 ```shell
-curl -o vendor/assets/javascripts/angular.js http://code.angularjs.org/1.0.5/angular.js
+curl -o vendor/assets/javascripts/angular.js https://code.angularjs.org/1.0.5/angular.js
 ```
 
-As of today, Angular has stable version of 1.0.5. You can check the latest version [here](http://angularjs.org) and update the above command as necessary. I also prefer to download the uncompressed files for easier debugging whilst Rails can helps in minifying the files later during deployment.
+As of today, Angular has stable version of 1.0.5. You can check the latest version [here](https://angularjs.org) and update the above command as necessary. I also prefer to download the uncompressed files for easier debugging whilst Rails can helps in minifying the files later during deployment.
 
 However, only putting the latest angular js files won't make it work, so let's modify the manifest file that list all js files that will be included in the Rails asset pipeline (if you don't specify it here, it won't be included by Rails). Rails already created this file and fill it with some initial configuration, but I prefer to replace it with my own configuration. 
 
@@ -257,7 +257,7 @@ app.config ($httpProvider) ->
   $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken
 ```
 
-Other than `config` folder, there is `controllers` folder. This folder contains, well, controllers for our angular application. There is also `directives` folder, directive is an important concept in angular that makes it possible to implement a real "unobtrusive javascript". Directive are custom attributes that can be placed within any html tags and its usage is controlled by separated file located in this `directives` folder. The ability to place custom attributes that can be controlled in separated files gives our html template 'steroid' that makes them more powerful in web application context, while keeping it uncluttered. Angular comes with many home-ground directives that you may find interesting, you can check it out [here](http://docs.angularjs.org/api/).
+Other than `config` folder, there is `controllers` folder. This folder contains, well, controllers for our angular application. There is also `directives` folder, directive is an important concept in angular that makes it possible to implement a real "unobtrusive javascript". Directive are custom attributes that can be placed within any html tags and its usage is controlled by separated file located in this `directives` folder. The ability to place custom attributes that can be controlled in separated files gives our html template 'steroid' that makes them more powerful in web application context, while keeping it uncluttered. Angular comes with many home-ground directives that you may find interesting, you can check it out [here](https://docs.angularjs.org/api/).
 
 Next is `filters` directory in which you can put your custom filters here and then there are also `resources` and `services` folders. You can see resource on angular like model in Rails, the difference lies on its datasource. If Rails application model glue the application with database, Angular resource is the interface between the application itself and external API that will be used as the datasource (which, in this case, Rails that spout JSON). Lastly, I see service as 'global' function that can be injected and used anywhere within the angular application.
 
