@@ -18,7 +18,7 @@ Initially, I intended to merge topic about Angular `$resource` and Service into 
 
 I realize that majority of (good) programmers are witty. I like on how they made pun on things like technological abbreviation and such, like REST, which we will discuss and those "stupid", recursive abbreviation like GNU. Perhaps because tinkering with code everyday, constructing application on your mind before typing (every good programmer does this) finally making an effect to your body and soul. 
 
-Putting that aside, REST (REpresentational State Transfer‎) is an exceptionally important concept in web application development. It's one of dominant communication protocol for distributed system (the other one being [SOAP](http://en.wikipedia.org/wiki/SOAP)). I won't talk much about it here, because I learned it several years ago from an excellent and comprehensive article (with yet another witty title :D) that you can also read to understand it clearly - [How I Explained REST to My Wife](http://web.archive.org/web/20130116005443/http://tomayko.com/writings/rest-to-my-wife).
+Putting that aside, REST (REpresentational State Transfer‎) is an exceptionally important concept in web application development. It's one of dominant communication protocol for distributed system (the other one being [SOAP](https://en.wikipedia.org/wiki/SOAP)). I won't talk much about it here, because I learned it several years ago from an excellent and comprehensive article (with yet another witty title :D) that you can also read to understand it clearly - [How I Explained REST to My Wife](https://web.archive.org/web/20130116005443/http://tomayko.com/writings/rest-to-my-wife).
 
 <pre style="white-space: pre-wrap;">
 <small>During my writing of this article, I just realized that the aforementioned article has been put down by it's original writer, Ryan Tomayko, due to request from people that find the title offensive. However, after thinking about it carefully, I decided to keep the link there. My reason for this are:
@@ -43,7 +43,7 @@ REST behave this way due to the characteristics and requirements of a distribute
 
 ## $resource and REST
 
-Rails fully embraces REST from version 1.2 onwards (previously they use SOAP). DHH post about the transition in the rails blog, [here](http://weblog.rubyonrails.org/2007/1/18/rails-1-2-rest-admiration-http-lovefest-and-utf-8-celebrations/). Therefore if we adhere to Rails best practice when creating the controllers and routes (perhaps by following the [official guide](http://guides.rubyonrails.org/routing.html)), our resources will be RESTful. Thus no changes are needed in the Rails side. 
+Rails fully embraces REST from version 1.2 onwards (previously they use SOAP). DHH post about the transition in the rails blog, [here](https://weblog.rubyonrails.org/2007/1/18/rails-1-2-rest-admiration-http-lovefest-and-utf-8-celebrations/). Therefore if we adhere to Rails best practice when creating the controllers and routes (perhaps by following the [official guide](https://guides.rubyonrails.org/routing.html)), our resources will be RESTful. Thus no changes are needed in the Rails side. 
 
 Let's take a look at all actions from our Rails `TasksController` and its corresponding routes below (standard CRUD actions).
 
@@ -159,7 +159,7 @@ Each part of the code is actually an "action" that calls the corresponding Rails
 Angular actually have a better way for handling calls to RESTful API rather than 'manually' through the usage of `$http`, which is using `$resource`. Below is the definition of `$resource` as explained by Angular official documentation.
 
 <pre style="white-space: pre-wrap;">
-A <a href="http://en.wikipedia.org/wiki/Factory_method_pattern">factory</a> which creates a resource object that lets you interact with RESTful server-side data sources.
+A <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">factory</a> which creates a resource object that lets you interact with RESTful server-side data sources.
 
 The returned resource object has action methods which provide high-level behaviors without the need to interact with the low level $http service.
 </pre>
@@ -186,7 +186,7 @@ In the example from previous part, I forgot to put 'edit' action in the Rails AP
 
 **Include AngularResource in our application**
 
-Now, we can discuss about steps that are required to utilize Angular Resource. First you have to 'install' (or include) the necessary Angular Resource library in your application. You can download the angular-resource library from their [offical repository](http://code.angularjs.org). As I used version 1.0.6 of angular, I downloaded the angular-resource [here](http://code.angularjs.org/1.0.6/angular-resource.js). After putting `angular-resource.js` file in `vendor/assets/javascripts/angular`, I require it at the `application.js` file.
+Now, we can discuss about steps that are required to utilize Angular Resource. First you have to 'install' (or include) the necessary Angular Resource library in your application. You can download the angular-resource library from their [offical repository](https://code.angularjs.org). As I used version 1.0.6 of angular, I downloaded the angular-resource [here](https://code.angularjs.org/1.0.6/angular-resource.js). After putting `angular-resource.js` file in `vendor/assets/javascripts/angular`, I require it at the `application.js` file.
 
 ```javascript
 // app/assets/javascripts/application.js
@@ -231,7 +231,7 @@ You can put the url for the resources, default parameters (to communicate with R
 };
 ```
 
-Remove and delete are actually the same method, but to ensure compability with IE you should use `remove` as `delete` is a reserved word (taken from [here](http://stackoverflow.com/questions/15706560/angular-resource-what-is-the-difference-between-delete-and-remove)). `get` is Rails equivalent for `show` action, `save` is `create`, `query` is `index` and `remove` (or `delete`) is `destroy`. The only missing action is angular-equivalent of Rails `update`, so we must add additional actions for that purpose. 
+Remove and delete are actually the same method, but to ensure compability with IE you should use `remove` as `delete` is a reserved word (taken from [here](https://stackoverflow.com/questions/15706560/angular-resource-what-is-the-difference-between-delete-and-remove)). `get` is Rails equivalent for `show` action, `save` is `create`, `query` is `index` and `remove` (or `delete`) is `destroy`. The only missing action is angular-equivalent of Rails `update`, so we must add additional actions for that purpose. 
 
 Our `TaskResource` will looks like this:
 

@@ -12,9 +12,9 @@ tags:
 
 <small>*Source code for application that we will create, can be accessed [here](https://github.com/giosakti/rails_angular_integration_example) (including part one)*</small>
 
-Here's an interesting fact: most web framework nowadays declare themselves an MVC framework. However based on this [first note regarding MVC](http://heim.ifi.uio.no/~trygver/2007/MVC_Originals.pdf) by its conceptor, it's revealed that MVC aren't suited (or designed) for web application at all.
+Here's an interesting fact: most web framework nowadays declare themselves an MVC framework. However based on this [first note regarding MVC](https://heim.ifi.uio.no/~trygver/2007/MVC_Originals.pdf) by its conceptor, it's revealed that MVC aren't suited (or designed) for web application at all.
 
-So how about Rails? isn't it also one of those MVC framework? Well the truth is Rails [closer](http://andrzejonsoftware.blogspot.com/2011/09/rails-is-not-mvc.html) to [Model2](http://en.wikipedia.org/wiki/Model2) than MVC itself. Although one can't deny that Model2 takes it root from MVC. This confusion has sometimes creates quite a stir at discussion boards or blog comment boards that is crowded by developers, which leads to [this](https://plus.google.com/+AngularJS/posts/aZNVhj355G2) narrative by Google's own Igor Minar whom develop AngularJS.
+So how about Rails? isn't it also one of those MVC framework? Well the truth is Rails [closer](https://andrzejonsoftware.blogspot.com/2011/09/rails-is-not-mvc.html) to [Model2](https://en.wikipedia.org/wiki/Model2) than MVC itself. Although one can't deny that Model2 takes it root from MVC. This confusion has sometimes creates quite a stir at discussion boards or blog comment boards that is crowded by developers, which leads to [this](https://plus.google.com/+AngularJS/posts/aZNVhj355G2) narrative by Google's own Igor Minar whom develop AngularJS.
 
 So **Model-View-Whatever** eh? Google? but why'd you still call controller in AngularJS as 'controller' ? not 'whatever' ? :D
 
@@ -77,7 +77,7 @@ That was my angularJS session controller. We would discuss about session in the 
 <pre style="white-space: pre-wrap;">
 <strong>Injected? Injection?</strong>
 
-<small><em>Taken from <a href=http://en.wikipedia.org/wiki/Dependency_injection>wiki</a></em>
+<small><em>Taken from <a href=https://en.wikipedia.org/wiki/Dependency_injection>wiki</a></em>
 
 Dependency injection is a software design pattern that allows removing hard-coded dependencies and making it possible to change them, whether at run-time or compile-time.
 

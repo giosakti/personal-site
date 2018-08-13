@@ -13,7 +13,7 @@ So, around three weeks ago I went to the Reddot Ruby Conference (RDRC) in Singap
 
 In this post I will share some of the interesting tidbits plus my commentary regarding each subject.
 
-(You can also check rdrc official website [here](http://www.reddotrubyconf.com/))
+(You can also check rdrc official website [here](https://www.reddotrubyconf.com/))
 
 ## Day One
 
@@ -69,8 +69,8 @@ end
 
 The second topic was about refactoring. Aaron suggested that we use graph to represent our code for better analysis during refactoring.
 
-<img src="http://mightygio.com/wp-content/uploads/2013/07/parse_tree.png" alt="">
-<img src="http://mightygio.com/wp-content/uploads/2013/07/dependency_tree.png" alt="">
+<!-- <img src="http://mightygio.com/wp-content/uploads/2013/07/parse_tree.png" alt=""> -->
+<!-- <img src="http://mightygio.com/wp-content/uploads/2013/07/dependency_tree.png" alt=""> -->
 
 Aaron actually shows us how he refactor `set_callback` method on `ActiveSupport::Callbacks` as an example. I'm not gonna discuss in detail on how Aaron refactor those particular piece of code, but I'm gonna just extract the important bits of Aaron's talk. However if you're still interested on how he refactor the particular piece of code you can check his slide <a href="https://speakerdeck.com/tenderlove/reddotrubyconf">here</a>.
 
@@ -94,11 +94,11 @@ Aaron talks are very interesting, but this topic that was brought by Luismi Cave
 
 My biggest concern for using Rails is now about its capability in handling big project. What I mean by big is when the project has complex requirements and business process (I'm not currently talking about scalability). Some of my past projects have Rails application with tons of models and controllers. The models, especially, have bad traits that I hate: **crowded**, **complex** and **not very readable** especially for our developers whom joined the project late.
 
-**Fat Model** was the first topic that was touched by Luismi. It was exactly the topic that I want to explore more. It seems that he has the same concern with me, that is a 'Fat Model', an active record model that does not adhere to [SRP (Single Responsibility Principle)](http://en.wikipedia.org/wiki/Single_responsibility_principle), have low cohesion, tight coupling with related things placed too far away thus making it hard to read (this will most likely happens if you have a model that have > 200 lines of codes).
+**Fat Model** was the first topic that was touched by Luismi. It was exactly the topic that I want to explore more. It seems that he has the same concern with me, that is a 'Fat Model', an active record model that does not adhere to [SRP (Single Responsibility Principle)](https://en.wikipedia.org/wiki/Single_responsibility_principle), have low cohesion, tight coupling with related things placed too far away thus making it hard to read (this will most likely happens if you have a model that have > 200 lines of codes).
 
 **ActiveSupport::Concern**
 
-There are several ways that can be used for handling Fat Model. One of the method that was introduced by Luismi is `ActiveSupport::Concern`. In the simplest explanation that I can give, `ActiveSupport::Concern` is a [mixin](http://en.wikipedia.org/wiki/Mixin). Just like a mixin in compass css framework. They are **classes** that bind together **common purposes**, which is not a part of model's nature, is cross-cutting and usually tightly related to a domain concept. These classes can be reused by our models by including them. Examples of an `ActiveSupport::Concern` is taggable, searchable, movable, visible, trashable. 
+There are several ways that can be used for handling Fat Model. One of the method that was introduced by Luismi is `ActiveSupport::Concern`. In the simplest explanation that I can give, `ActiveSupport::Concern` is a [mixin](https://en.wikipedia.org/wiki/Mixin). Just like a mixin in compass css framework. They are **classes** that bind together **common purposes**, which is not a part of model's nature, is cross-cutting and usually tightly related to a domain concept. These classes can be reused by our models by including them. Examples of an `ActiveSupport::Concern` is taggable, searchable, movable, visible, trashable. 
 
 ```ruby
 module Taggable
@@ -143,7 +143,7 @@ Some advantages on using `ActiveSupport::Concern` are they help keep cohesion hi
 
 **Non-persisted Model**
 
-And then there is non-persisted model. Models in our rails projects are usually tightly related to a database object (persisted). However, there maybe exist some behaviors, which needed to be placed within its own model, but do not need to be persisted into the database. This one is perhaps similar with Service Layer - [Facade Pattern](http://en.wikipedia.org/wiki/Facade_pattern), just like Service in our Angular application. Non-persisted model is a service, an object that maybe called by another models / objects, which purpose is to give abstraction to a group of methods. Therefore, persistence is not needed.
+And then there is non-persisted model. Models in our rails projects are usually tightly related to a database object (persisted). However, there maybe exist some behaviors, which needed to be placed within its own model, but do not need to be persisted into the database. This one is perhaps similar with Service Layer - [Facade Pattern](https://en.wikipedia.org/wiki/Facade_pattern), just like Service in our Angular application. Non-persisted model is a service, an object that maybe called by another models / objects, which purpose is to give abstraction to a group of methods. Therefore, persistence is not needed.
 
 ```ruby
 
@@ -251,7 +251,7 @@ Jim was a very test-driven as developer, in the code kata example that was demo'
 > Know: When to Leave in Duplication  
 > Know: The Edge Cases  
 
-You absolutely have to check [this](http://codekata.pragprog.com) if you're interested about code kata.
+You absolutely have to check [this](https://codekata.pragprog.com) if you're interested about code kata.
 
 ## Conclusion
 
