@@ -22,20 +22,32 @@ Start upgrading by executing the `snap install` command.
 sudo snap install lxd --channel=3.0
 ```
 
-Do the migration, extra nice because LXD will ask if we want to remove the old LXD version so that it doesn't conflict.
+The command will install LXD on a different location than the default LXD on Ubuntu 16.04.
+
+Make sure that we are executing on the 3.0 version by typing `lxd -v`. And now we can do the migration, the migration process is nice because LXD will automatically migrate our existing containers and it will also ask if we want to remove the old LXD version.
 
 ```shell
 ```
 
-Make sure that you have the 3.0 version by typing `lxd -v`. Also because we want to try out the clustering mode, we have to provision another machine which also has LXD upgraded to 3.0.
+Because we want to try out the clustering mode, we have to provision another machine which also has its LXD upgraded to 3.0. 
+
+> In production, you may want to cluster odd number of machines with minimum number of 3 to be safe and to avoid deadlock in election (dqlite, database that LXD currently use for clustering uses Raft).
 
 ## Bootstrap the first node
 
-Procedure for bootstrapping the first node will be slightly different than all the other node. There are two ways to bootstrap, first is to use the interactive 'wizard' by executing `lxd init` and the other way is to use a 'preseed' file which will be used to setup. We will do the first one in this post, so that we can understand the process more clearly.
+Procedure for bootstrapping the first node will be slightly different than all the other node. There are two ways to bootstrap, first is to use the interactive 'wizard' by executing `sudo lxd init` and the other way is to use a 'preseed' file which will be used to setup. We will do the first way, so that we can understand the process more clearly in step-by-step fashion.
+
+```shell
+sudo lxd init
+```
 
 ## Bootstrap the joining node
 
-On joining node, we can bootstrap the same way by executing `lxd init`, but the answer that we give will be slightly different. Let's try doing it and see what the wizard progression looks like.
+On joining node, we can bootstrap the same way by executing `sudo lxd init`, but the answer that we give should be slightly different. Let's try doing it and see what the wizard progression looks like. Make sure that you make note of the first node IP and cluster trust password before continuing.
+
+```shell
+sudo lxd init
+```
 
 ## Testing
 
@@ -48,9 +60,16 @@ sudo lxc launch ubuntu:16.04 test-02
 
 Now execute `sudo lxc list` and you will get something similar to this:
 
-Notice that both containers are located in different host? By default LXD will provision our containers on round-robin fashion. Depending on your requirements, this can be a major drawback. For some people it might be more beneficial if there's option to do load-based scheduling, but I understand that it is not supported as of now and also more complicated to setup because we have to gather metrics for that.
+Notice that both containers are located in different host? By default LXD will provision our containers in round-robin fashion. Depending on your requirements, this can be a major drawback. For some people it might be more beneficial if there's option to do load-based scheduling, but I understand that it is not supported as of now and also more complicated to setup because we have to gather metrics first. 
+
+On a side, I'm doing something interesting related to that, perhaps I will discuss about what I'm working on in my future post.
 
 ## Limitation and Conclusion
 
-1. Can only schedule our container in round robin fashion
-2. Operation data is not properly replicated across cluster (this is a bug)
+There are couple of things that limits the ability of current version of LXD clustering. First is it can only schedule our container in round robin fashion. We can target a specific host everytime we want to launch a container, but then we have to roll out our own scheduler.
+
+The other thing is I found a bug when working with the LXD API. So every operation in LXD is done asynchronously, including container creation and start operation. When we do any operation, the API will return the operation ID and we have to manually query periodically to determine if our operation is a success. The problem is, the operation itself will only exist in machine where the operation is performed. In other machine, the operation won't be replicated and we will get a 404. This has been recognized as a bug, which you can find more info about it [here](). Fixes are rolled out in LXD 3.3, unfortunately that is a stable channel not an LTS channel. So now I have to weight decisions whether to upgrade or not. Because we cannot rollback once we upgrade.
+
+All in all, LXD is heading into a nice direction with very active development team. They do stable release almost every month and many major features and fixes were introduced in every stable version. I'm seeing a potential with this platform, which may fill some niches if we compared it to docker.
+
+## References
