@@ -38,14 +38,14 @@ We can use `snap info lxd` command to see the list of all possible channels.
 
 **Allow containers to consume more memory map areas**
 
-```
+```shell
 $ sudo sysctl -w vm.max_map_count=262144
 ```
 
 To make it persist you can also do:
 
-```
-# ensure this line exist at the bottom of /etc/sysctl.conf
+```shell
+# Ensure this line exist at the bottom of /etc/sysctl.conf
 
 ...
 vm.max_map_count=262144
@@ -68,15 +68,49 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart snap.lxd.daemon
 ```
 
-#### Distributed Database
+#### LXD Verbose Mode
+
+If we want to see every outputs that LXD made, we can startup in verbose mode. Do this:
+
+1. Stop the daemon
+
+    ```shell
+    systemctl stop snap.lxd.daemon
+
+    # or force stop
+
+    sudo service snap.lxd.daemon force-stop
+
+    # or kill it as necessary
+    ```
+
+2. Start the daemon in verbose mode
+
+    ```shell
+    LXD_DIR=/var/snap/lxd/common/lxd LD_LIBRARY_PATH=/snap/lxd/current/lib/ /snap/lxd/current/bin/lxd --verbose --debug
+    ```
+
+#### Monitor LXC While Running
+
+```shell
+lxc monitor --pretty --type logging
+```
+
+#### Database
 
 LXD uses special, distributed version of sqlite called [dqlite](https://github.com/CanonicalLtd/dqlite). LXD has local and global database running on clustering mode.
+
+We can do a manual query to this database on special circumstances. Example:
+
+```shell
+echo "UPDATE config SET value='aa.bb.cc.dd:8443' WHERE key='core.https_address'" | sqlite3 /var/snap/lxd/common/lxd/database/local.db
+```
 
 #### Storage Pools
 
 **See list of local volumes on an LXC host**
 
-```
+```shell
 $ sudo lxc storage show local --target <lxc-hostname>
 ```
 
@@ -84,13 +118,13 @@ $ sudo lxc storage show local --target <lxc-hostname>
 
 If we encounter this error on LXD log, then we can check if `storage_pools_config` exist properly on the database by typing this command:
 
-```
+```shell
 $ lxd sql global "SELECT * FROM storage_pools_config;"
 ```
 
 If it indeed missing, then we can add missing configuration manually:
 
-```
+```shell
 $ lxd sql global "INSERT INTO storage_pools_config (storage_pool_id, node_id, key, value) VALUES (1, 3, 'source', 'local');"
 $ lxd sql global "INSERT INTO storage_pools_config (storage_pool_id, node_id, key, value) VALUES (1, 3, 'volatile.initial_source', '/dev/xvdf');"
 $ lxd sql global "INSERT INTO storage_pools_config (storage_pool_id, node_id, key, value) VALUES (1, 3, 'zfs.pool_name', 'local');"

@@ -14,3 +14,7 @@ Multiple listeners can be specified, separated by comma. Example of valid `adver
 ```
 PLAINTEXT://myhost:9092,TRACE://:9091 PLAINTEXT://0.0.0.0:9092, TRACE://localhost:9093
 ```
+
+#### Kafka on Low Memory Environment
+
+https://groups.google.com/forum/#!topic/confluent-platform/KA-RxeVIstA
