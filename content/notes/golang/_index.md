@@ -6,17 +6,17 @@ authors: ["gio"]
 #### Installing on Linux
 
 ```shell
-$ sudo add-apt-repository ppa:gophers/archive -y
-$ sudo apt-get update
-$ sudo apt-get install golang-1.10-go -y
+sudo add-apt-repository ppa:gophers/archive -y
+sudo apt-get update
+sudo apt-get install golang-1.10-go -y
 ```
 
 **Installing Glide (Package Manager)**
 
 ```shell
-$ sudo add-apt-repository ppa:masterminds/glide -y
-$ sudo apt-get update
-$ sudo apt-get install glide -y
+sudo add-apt-repository ppa:masterminds/glide -y
+sudo apt-get update
+sudo apt-get install glide -y
 ```
 
 #### Install all dependencies recursively

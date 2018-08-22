@@ -8,8 +8,8 @@ authors: ["gio"]
 By default Ubuntu 16.04 ships with LXD 2.x. If we want to utilize clustering, it means that we have to install LXD 3.0. The easiest way of doing this is using snap:
 
 ```shell
-$ sudo snap install lxd --channel=3.0/stable
-$ sudo lxd.migrate
+sudo snap install lxd --channel=3.0/stable
+sudo lxd.migrate
   Do you want to uninstall the old LXD (yes/no) [default=no]? yes
 ```
 
@@ -26,8 +26,8 @@ cat /etc/default/lxd_preseed.yml | sudo lxd init --preseed
 If we want to upgrade, we can track another channel and do a refresh by doing this command:
 
 ```shell
-$ sudo snap switch lxd --channel=<channel>
-$ sudo snap refresh
+sudo snap switch lxd --channel=<channel>
+sudo snap refresh
 ```
 
 We can use `snap info lxd` command to see the list of all possible channels.
@@ -39,7 +39,7 @@ We can use `snap info lxd` command to see the list of all possible channels.
 **Allow containers to consume more memory map areas**
 
 ```shell
-$ sudo sysctl -w vm.max_map_count=262144
+sudo sysctl -w vm.max_map_count=262144
 ```
 
 To make it persist you can also do:
@@ -64,8 +64,8 @@ LimitMEMLOCK=infinity
 ```
 
 ```shell
-$ sudo systemctl daemon-reload
-$ sudo systemctl restart snap.lxd.daemon
+sudo systemctl daemon-reload
+sudo systemctl restart snap.lxd.daemon
 ```
 
 #### LXD Verbose Mode
@@ -111,7 +111,7 @@ echo "UPDATE config SET value='aa.bb.cc.dd:8443' WHERE key='core.https_address'"
 **See list of local volumes on an LXC host**
 
 ```shell
-$ sudo lxc storage show local --target <lxc-hostname>
+sudo lxc storage show local --target <lxc-hostname>
 ```
 
 **Error: no "source" property found for the storage pool**
@@ -119,15 +119,15 @@ $ sudo lxc storage show local --target <lxc-hostname>
 If we encounter this error on LXD log, then we can check if `storage_pools_config` exist properly on the database by typing this command:
 
 ```shell
-$ lxd sql global "SELECT * FROM storage_pools_config;"
+lxd sql global "SELECT * FROM storage_pools_config;"
 ```
 
 If it indeed missing, then we can add missing configuration manually:
 
 ```shell
-$ lxd sql global "INSERT INTO storage_pools_config (storage_pool_id, node_id, key, value) VALUES (1, 3, 'source', 'local');"
-$ lxd sql global "INSERT INTO storage_pools_config (storage_pool_id, node_id, key, value) VALUES (1, 3, 'volatile.initial_source', '/dev/xvdf');"
-$ lxd sql global "INSERT INTO storage_pools_config (storage_pool_id, node_id, key, value) VALUES (1, 3, 'zfs.pool_name', 'local');"
+lxd sql global "INSERT INTO storage_pools_config (storage_pool_id, node_id, key, value) VALUES (1, 3, 'source', 'local');"
+lxd sql global "INSERT INTO storage_pools_config (storage_pool_id, node_id, key, value) VALUES (1, 3, 'volatile.initial_source', '/dev/xvdf');"
+lxd sql global "INSERT INTO storage_pools_config (storage_pool_id, node_id, key, value) VALUES (1, 3, 'zfs.pool_name', 'local');"
 ```
 
 See [this](https://discuss.linuxcontainers.org/t/lxd-cluster-hangs/1520/9) issue for details.
