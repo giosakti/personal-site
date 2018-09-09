@@ -11,12 +11,14 @@ sudo apt-get update
 sudo apt-get install golang-1.10-go -y
 ```
 
-**Installing Glide (Package Manager)**
+**Installing golang/dep (Package Manager)**
 
 ```shell
-sudo add-apt-repository ppa:masterminds/glide -y
-sudo apt-get update
-sudo apt-get install glide -y
+# OSX
+brew install dep
+
+# Linux
+curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 ```
 
 #### Install all dependencies recursively
@@ -36,10 +38,6 @@ go get ./...
 
 https://blog.golang.org/json-and-go
 
-#### Useful Standard Library
-
-https://golang.org/pkg/time/#Sleep
-
 #### Rewriting Request Body
 
 We need to modify the content length if we modify http request body.
@@ -50,6 +48,22 @@ req.Body = ioutil.NopCloser(bytes.NewReader(b))
 ```
 
 See [this](https://stackoverflow.com/questions/33606330/golang-rewrite-http-request-body).
+
+#### Mocking
+
+Do this inside one of your project
+
+```shell
+dep ensure -add github.com/golang/mock/gomock
+go get github.com/golang/mock/mockgen
+# Ensure your $GOPATH/bin is in your $PATH
+mkdir mock
+mockgen -destination=mock/mock_<file_name>.go -package=mock <package> <interface>
+```
+
+#### Useful Standard Library
+
+https://golang.org/pkg/time/#Sleep
 
 #### Useful Libraries
 
