@@ -131,3 +131,15 @@ lxd sql global "INSERT INTO storage_pools_config (storage_pool_id, node_id, key,
 ```
 
 See [this](https://discuss.linuxcontainers.org/t/lxd-cluster-hangs/1520/9) issue for details.
+
+#### LXD behavior on Host reboot
+
+Yes, on shutdown of the host all containers are sent a shutdown signal to which they have 30s to respond by doing a clean shutdown of the container. After that, if the container is still running, it'll be killed by LXD.
+
+On startup, all containers which were running at the time the system was shut down will be started back up.
+
+#### LXC Networking
+
+Fan network is managed by lxd directly, see [here](https://lxd.readthedocs.io/en/stable-3.0/networks/).
+
+If we restart LXD, network will restarted.

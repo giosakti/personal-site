@@ -18,3 +18,47 @@ PLAINTEXT://myhost:9092,TRACE://:9091 PLAINTEXT://0.0.0.0:9092, TRACE://localhos
 #### Kafka on Low Memory Environment
 
 https://groups.google.com/forum/#!topic/confluent-platform/KA-RxeVIstA
+
+#### Using kafkacat to peek into a topic
+
+```
+
+kafkacat -b 172.28.22.36:9092 -t goresto-api_logs -p 0 -o -10
+
+Read the last 2000 messages from 'syslog' topic, then exit
+$ kafkacat -C -b mybroker -t syslog -p 0 -o -2000 -e
+```
+
+#### kafka-manager
+
+Installing kafka-manager manually
+
+```
+sudo apt-get install openjdk-8-jdk
+
+sudo cp /etc/profile /etc/profile_backup 
+echo 'export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64' | sudo tee -a /etc/profile
+source /etc/profile
+
+wget https://downloads.lightbend.com/scala/2.12.6/scala-2.12.6.deb
+sudo dpkg -i scala-2.12.6.deb
+scala -version
+
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+sudo apt-get update
+sudo apt-get install sbt
+
+git clone https://github.com/yahoo/kafka-manager.git
+cd ./kafka-manager
+sbt clean dist
+
+mv ./target/universal/kafka-manager-1.3.3.8.zip ~/
+unzip kafka-manager-1.3.3.8.zip
+rm kafka-manager-1.3.3.8.zip
+cd kafka-manager-1.3.3.8
+```
+
+#### Monitoring Lag using Burrow
+
+See [here](https://github.com/linkedin/Burrow)

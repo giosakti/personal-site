@@ -28,6 +28,65 @@ References:
 2. https://unix.stackexchange.com/questions/58553/how-to-clear-memory-cache-in-linux
 3. https://stackoverflow.com/questions/29870068/what-are-pagecache-dentries-inodes
 
+#### See process pid information
+
+```
+cat /proc/<pid>/status
+```
+
+#### Check system message
+
+```
+sudo tail -f /var/log/syslog
+sudo dmesg
+```
+
+#### Double dash
+
+Double dash in linux, for example:
+
+`grep -- -v file`
+
+Is used to signify the end of optional parameters. From that point onward positional parameters will be accepted.
+
+See [here](https://unix.stackexchange.com/questions/11376/what-does-double-dash-mean-also-known-as-bare-double-dash)
+
+#### awk
+
+Split a line into multiple values. Use space as separator.
+
+```
+# Will print first column
+ls -l | awk '{print $1}'
+
+# Will print all columns
+ls -l | awk '{print $0}'
+```
+
+#### xargs
+
+Cat each files in this directory.
+
+```
+ls -l | awk '{print $9}' | xargs -I{} cat {}
+```
+
+#### cut
+
+Considering that we have file `test.txt` containing this:
+
+```
+person-1;soccer;80
+person-2;badminton;60
+person-3;chess;58
+```
+
+And we want to get the list of the second column only, we can do this using `cut`:
+
+```
+cat test.txt | cut -d';' -f2
+```
+
 #### Communication via Socket
 
 1. https://en.wikipedia.org/wiki/Unix_file_types
