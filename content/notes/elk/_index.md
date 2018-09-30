@@ -3,6 +3,24 @@ title: "ELK"
 authors: ["gio"]
 ---
 
+#### Useful APIs
+
+```
+curl -XGET http://localhost:9200/_cluster/health?pretty=true
+curl -XGET http://localhost:9200/_cat/indices?v
+curl -XGET http://localhost:9200/_cat/shards
+```
+
+#### Fixing: Unassigned Shards
+
+```
+curl -XGET http://localhost:9200/_cat/shards
+curl -XPUT 'localhost:9200/_settings' \
+    -d '{"index.routing.allocation.disable_allocation": false}'
+```
+
+Also see [here](https://stackoverflow.com/questions/19967472/elasticsearch-unassigned-shards-how-to-fix)
+
 #### Authorization
 
 1. https://www.elastic.co/guide/en/x-pack/current/authorization.html
