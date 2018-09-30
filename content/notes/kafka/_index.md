@@ -62,3 +62,28 @@ cd kafka-manager-1.3.3.8
 #### Monitoring Lag using Burrow
 
 See [here](https://github.com/linkedin/Burrow)
+
+## Running Kafka on Production
+
+#### Common Issues
+
+- Zookeeper out of sync
+- Unregistered broker
+- Under replicated partition
+- Kafka disk is full
+
+#### Optimizing Kafka
+
+If we can afford missing messages, we can do this to increase throughput:
+- Leader ACK only when producing message
+- Unclean leader election, unclean node can become leader
+
+Fronting kafka architecture:
+- https://blog.gojekengineering.com/kafka-4066a4ea8d0d
+
+#### Monitoring & Tools
+
+- Burrow (to monitor lag)
+- Jolokia
+- Kafka Manager
+- Zookeeper CLI
