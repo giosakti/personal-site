@@ -9,12 +9,16 @@ authors: ["gio"]
 curl -XGET http://localhost:9200/_cluster/health?pretty=true
 curl -XGET http://localhost:9200/_cat/indices?v
 curl -XGET http://localhost:9200/_cat/shards
+curl -XGET http://localhost:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason
 ```
 
 #### Fixing: Unassigned Shards
 
 ```
-curl -XGET http://localhost:9200/_cat/shards
+# Fetch all shards
+curl -XGET http://localhost:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason
+
+# Disable allocation
 curl -XPUT 'localhost:9200/_settings' \
     -d '{"index.routing.allocation.disable_allocation": false}'
 ```

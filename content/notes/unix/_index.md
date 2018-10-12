@@ -87,6 +87,15 @@ And we want to get the list of the second column only, we can do this using `cut
 cat test.txt | cut -d';' -f2
 ```
 
+#### wc
+
+Word counting in Unix.
+
+```
+# Count number of lines from stdout
+sudo ls | wc -l
+```
+
 #### Communication via Socket
 
 1. https://en.wikipedia.org/wiki/Unix_file_types

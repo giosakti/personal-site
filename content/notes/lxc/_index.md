@@ -143,3 +143,15 @@ On startup, all containers which were running at the time the system was shut do
 Fan network is managed by lxd directly, see [here](https://lxd.readthedocs.io/en/stable-3.0/networks/).
 
 If we restart LXD, network will restarted.
+
+#### Cannot delete LXD zfs backed containers: dataset is busy
+
+```
+# Get process that is still mounting the volume
+grep containers/test1 /proc/*/mountinfo
+
+# Get rid of the mount
+nsenter -t <PID> -m -- umount /var/lib/lxd/storage-pools/lxd/containers/test1
+```
+
+See [this](https://github.com/lxc/lxd/issues/4656) issue for details.
