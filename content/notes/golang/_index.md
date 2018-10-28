@@ -61,6 +61,10 @@ mkdir mock
 mockgen -destination=mock/mock_<file_name>.go -package=mock <package> <interface>
 ```
 
+#### Limit of HTTP Handler Concurrent Connection
+
+https://stackoverflow.com/questions/47385692/limited-concurrent-connections-in-go
+
 #### Useful Standard Library
 
 https://golang.org/pkg/time/#Sleep

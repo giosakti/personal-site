@@ -108,3 +108,38 @@ sudo ls | wc -l
 ```
 ssh-keygen -R <ipaddress>
 ```
+
+#### Check how many file descriptors are being used
+
+```
+# Find out pid of the process first
+ps aux | grep <process-name>
+
+# Check file descriptors being used by a particular process (Opt 1)
+lsof -a -p <pid>
+
+# Check file descriptors being used by a particular process (Opt 2)
+cd /proc/28290/fd
+
+# Then do
+ls -l | less
+
+# Or
+ls -l | wc -l
+
+# Check file descriptors being used (total)
+lsof | wc -l
+```
+
+See also [here](https://www.cyberciti.biz/tips/linux-procfs-file-descriptors.html)
+
+#### Measuring request and response time using curl
+
+```
+curl -X <request-type> \
+  -w %{time_connect}:%{time_starttransfer}:%{time_total} \
+  server:port \
+  -d <payload>
+```
+
+See also [here](https://stackoverflow.com/questions/18215389/how-do-i-measure-request-and-response-times-at-once-using-curl)

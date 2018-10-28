@@ -11,6 +11,10 @@ All past events that I attended as speaker including the presentation materials 
 
 #### Past Events
 
+**2018**
+
+- [20181023 - **Open-source First Engineering Culture** - TechinAsia Jakarta 2018](https://www.techinasia.com/events/jakarta/agenda/speakers)
+
 **2017**
 
 - 20171209 - pycall.rb - PyConID 2017
