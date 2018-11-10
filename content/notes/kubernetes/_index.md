@@ -3,6 +3,28 @@ title: "Kubernetes"
 authors: ["gio"]
 ---
 
+#### Cheat Sheet
+
+```
+kubectl config view
+kubectl current-context
+kubectl config set-context <context-name> --namespace=<namespace> --cluster=<cluster> --user=<user>
+kubectl config use-context <context-name>
+
+kubectl get namespaces
+kubectl create namespace vote
+
+kubectl get nodes
+kubectl get services
+kubectl get pods
+
+kubectl create -f <yaml-file(s)>
+kubectl apply -f <yaml-file(s)> # preferred
+
+kubectl logs -f --tail=100 <pod-name>
+kubectl exec -it <pod-name> -- /bin/sh
+```
+
 #### Kubernetes Networking
 
 References
