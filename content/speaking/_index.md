@@ -9,10 +9,13 @@ All past events that I attended as speaker including the presentation materials 
 
 #### Upcoming Events
 
+- [20181208 - **Barito: GO-JEK Scalable Logging Platform** - DevOpsDay India 2018](https://devopsdaysindia.org/#speakers)
+
 #### Past Events
 
 **2018**
 
+- 20181117 - **Open-source First Engineering Culture** - Moztalk November 2018
 - [20181023 - **Open-source First Engineering Culture** - TechinAsia Jakarta 2018](https://www.techinasia.com/events/jakarta/agenda/speakers)
 
 **2017**
