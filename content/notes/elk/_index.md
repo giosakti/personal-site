@@ -6,8 +6,25 @@ authors: ["gio"]
 #### Useful APIs
 
 ```
+# Cluster health
 curl -XGET http://localhost:9200/_cluster/health?pretty=true
+
+# Indices operation
 curl -XGET http://localhost:9200/_cat/indices?v
+curl -XGET http://localhost:9200/_cat/indices?h=h,s,i,id,p,r,dc,dd,ss,creation.date.string&s=creation.date:desc
+# h=health
+# s=status
+# i=index
+# id=uuid
+# p=pri
+# r=rep
+# dc=docs.count
+# dd=docs.deleted
+# ss=store.size
+
+curl -XDELETE http://localhost:9200/<<index_name>>,<<index_name>>
+
+# Shards operation
 curl -XGET http://localhost:9200/_cat/shards
 curl -XGET http://localhost:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason
 ```

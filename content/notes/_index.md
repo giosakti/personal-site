@@ -20,6 +20,7 @@ My personal scratchpad.
 - <a href="lxc">LXC</a>
 - <a href="postgresql">PostgreSQL</a>
 - <a href="puma">Puma</a>
+- <a href="ruby">Ruby</a>
 - <a href="ssl">SSL</a>
 - <a href="ubuntu">Ubuntu</a>
 - <a href="unix">Unix</a>
