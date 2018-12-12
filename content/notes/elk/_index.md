@@ -29,7 +29,7 @@ curl -XGET http://localhost:9200/_cat/shards
 curl -XGET http://localhost:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason
 ```
 
-#### Fixing: Unassigned Shards
+#### Fix: Unassigned Shards
 
 ```
 # Fetch all shards
@@ -41,6 +41,14 @@ curl -XPUT 'localhost:9200/_settings' \
 ```
 
 Also see [here](https://stackoverflow.com/questions/19967472/elasticsearch-unassigned-shards-how-to-fix)
+
+#### Disable read-only mode
+
+If for some reasons your elasticsearch node runs out of space, it will automatically lock all indices by enabling read-only mode. After you provide more spaces to elasticsearch node, you have to manually disable read-only mode by doing this to each indices:
+
+```
+curl -X PUT -H "Content-Type: application/json" -d '{"index": {"blocks": {"read_only_allow_delete": "false"}}}' "localhost:9200/<INDEX NAME>/_settings"
+```
 
 #### Authorization
 

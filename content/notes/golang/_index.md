@@ -72,3 +72,7 @@ https://golang.org/pkg/time/#Sleep
 #### Useful Libraries
 
 1. [CLI App Framework](https://github.com/urfave/cli)
+
+#### Best Practices
+
+- https://github.com/istio/istio/wiki/Dev-Writing-Fast-and-Lean-Code

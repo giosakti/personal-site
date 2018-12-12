@@ -81,6 +81,11 @@ If we can afford missing messages, we can do this to increase throughput:
 Fronting kafka architecture:
 - https://blog.gojekengineering.com/kafka-4066a4ea8d0d
 
+Misc:
+- https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster
+- https://hiya.com/blog/2018/06/07/hiyas-best-practices-around-kafka-consistency-and-availability/
+- https://engineering.linkedin.com/kafka/benchmarking-apache-kafka-2-million-writes-second-three-cheap-machines
+
 #### Monitoring & Tools
 
 - Burrow (to monitor lag)
