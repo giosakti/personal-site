@@ -29,6 +29,13 @@ Read the last 2000 messages from 'syslog' topic, then exit
 $ kafkacat -C -b mybroker -t syslog -p 0 -o -2000 -e
 ```
 
+#### Useful commands
+
+```
+./kafka-consumer-groups.sh  --list --bootstrap-server <KAFKA BROKER>:9092
+./kafka-consumer-groups.sh --describe --group <CONSUMER GROUP> --bootstrap-server <KAFKA BROKER>:9092
+```
+
 #### kafka-manager
 
 Installing kafka-manager manually

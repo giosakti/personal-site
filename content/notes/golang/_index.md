@@ -76,3 +76,4 @@ https://golang.org/pkg/time/#Sleep
 #### Best Practices
 
 - https://github.com/istio/istio/wiki/Dev-Writing-Fast-and-Lean-Code
+- https://github.com/perkeep/perkeep (project structure)
