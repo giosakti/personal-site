@@ -143,3 +143,17 @@ curl -X <request-type> \
 ```
 
 See also [here](https://stackoverflow.com/questions/18215389/how-do-i-measure-request-and-response-times-at-once-using-curl)
+
+#### Logrotate
+
+```
+Manually executing log rotation
+
+For global logrotate:
+
+sudo logrotate -v -f /etc/logrotate.conf
+
+For a single conf file:
+
+sudo logrotate -v -f /etc/logrotate.d/someapp.conf
+```
