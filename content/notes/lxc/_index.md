@@ -155,3 +155,22 @@ nsenter -t <PID> -m -- umount /var/lib/lxd/storage-pools/lxd/containers/test1
 ```
 
 See [this](https://github.com/lxc/lxd/issues/4656) issue for details.
+
+#### LXD: Unexpected response type 6
+
+If you receive similar message like this during execution of any `lxc` command.
+
+```
+STDERR: Error: Failed to setup cluster trust: failed client cert to cluster: failed to notify peer <IP ADDRESS>:8443: cannot fetch node config from database: unexpected response type 6
+```
+
+Then you may have to restart lxd in the node specified by the message, by executing:
+
+```
+sudo systemctl reload snap.lxd.daemon
+```
+
+References:
+- https://github.com/lxc/lxd/issues/3158
+- https://github.com/lxc/lxd/issues/4947
+- https://github.com/lxc/lxd/issues/5187

@@ -157,3 +157,13 @@ For a single conf file:
 
 sudo logrotate -v -f /etc/logrotate.d/someapp.conf
 ```
+
+#### Auditing
+
+Some references for auditing our machines.
+
+- [Auditing your Ubuntu server](http://www.tothenew.com/blog/auditing-your-ubuntu-servers/)
+- [How to log all Bash commands by all users on a server?](https://askubuntu.com/questions/93566/how-to-log-all-bash-commands-by-all-users-on-a-server)
+- [Process Accounting](https://www.linuxjournal.com/article/6144)
+- [Snoopy](https://github.com/a2o/snoopy)
+- [Why is my auth.log file empty?](https://serverfault.com/questions/896138/why-is-my-auth-log-file-empty)
