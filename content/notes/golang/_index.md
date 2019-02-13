@@ -29,6 +29,24 @@ To install all dependencies of a golang project or golang projects recursively w
 go get ./...
 ```
 
+#### Cross-platform compilation
+
+```shell
+# For example you can do this from OSX machine
+GOOS=linux GOARCH=amd64 go build
+```
+
+possible GOOS value:
+- darwin
+- linux
+- windows
+- ...
+
+possible GOARCH value:
+- 386
+- amd64
+- ...
+
 #### Manipulating Slice
 
 1. https://github.com/golang/go/wiki/SliceTricks
