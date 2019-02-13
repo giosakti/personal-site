@@ -37,12 +37,14 @@ GOOS=linux GOARCH=amd64 go build
 ```
 
 possible GOOS value:
+
 - darwin
 - linux
 - windows
 - ...
 
 possible GOARCH value:
+
 - 386
 - amd64
 - ...
