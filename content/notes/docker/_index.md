@@ -36,3 +36,7 @@ docker node update --label-add <key>=<value> <node-id>
 ```
 docker stack deploy --compose-file=docker-compose.yml stack-name
 ```
+
+#### Useful docker commands
+
+See [here](https://towardsdatascience.com/15-docker-commands-you-should-know-970ea5203421)
