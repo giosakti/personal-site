@@ -19,6 +19,7 @@ My personal scratchpad.
 - <a href="kubernetes">Kubernetes</a>
 - <a href="lxc">LXC</a>
 - <a href="osx">OSX</a>
+- <a href="packer">Packer</a>
 - <a href="postgresql">PostgreSQL</a>
 - <a href="puma">Puma</a>
 - <a href="ruby">Ruby</a>
