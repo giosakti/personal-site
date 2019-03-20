@@ -60,6 +60,10 @@ References
 - https://docs.helm.sh/chart_template_guide
 - https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md
 
+##### Do a rolling update when ConfigMap changes
+
+If your ConfigMap changes, please do a rolling upgrade on your pods by choosing one of two techniques specified [here](https://helm.sh/docs/developing_charts/#automatically-roll-deployments-when-configmaps-or-secrets-change)
+
 #### Minikube
 
 If you encounter this error when deploying in minikube cluster:
