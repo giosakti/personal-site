@@ -81,6 +81,16 @@ mkdir mock
 mockgen -destination=mock/mock_<file_name>.go -package=mock <package> <interface>
 ```
 
+#### Debugging Memory Leak
+
+References:
+
+- https://medium.com/dm03514-tech-blog/sre-debugging-simple-memory-leaks-in-go-e0a9e6d63d4d
+- https://dev.to/davidsbond/golang-debugging-memory-leaks-using-pprof-5di8
+- https://medium.com/dm03514-tech-blog/sre-debugging-simple-memory-leaks-in-go-e0a9e6d63d4d
+
+> Note: be mindful of golang's allocation. Use stack allocation whenever possible.
+
 #### Limit of HTTP Handler Concurrent Connection
 
 https://stackoverflow.com/questions/47385692/limited-concurrent-connections-in-go

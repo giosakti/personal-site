@@ -6,6 +6,7 @@ authors: ["gio"]
 My personal scratchpad.
 
 - <a href="api">API</a>
+- <a href="architecture">Architecture</a>
 - <a href="chef">Chef</a>
 - <a href="consul">Consul</a>
 - <a href="datadog">Datadog</a>
