@@ -56,5 +56,5 @@ sudo kernelstub -a "resume=UUID=<PARTITION-UUID> resume_offset=<SWAPFILE-OFFSET>
 
 **References**
 
-https://www.reddit.com/r/pop_os/comments/alqkfl/any_news_on_hibernate_feature_for_laptops_w_pop_os/
-https://wiki.debian.org/Hibernation/Hibernate_Without_Swap_Partition
+- https://www.reddit.com/r/pop_os/comments/alqkfl/any_news_on_hibernate_feature_for_laptops_w_pop_os/
+- https://wiki.debian.org/Hibernation/Hibernate_Without_Swap_Partition
