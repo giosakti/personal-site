@@ -18,6 +18,7 @@ My personal scratchpad.
 - <a href="java">Java</a>
 - <a href="kafka">Kafka</a>
 - <a href="kubernetes">Kubernetes</a>
+- <a href="linux">Linux</a>
 - <a href="lxc">LXC</a>
 - <a href="osx">OSX</a>
 - <a href="packer">Packer</a>
