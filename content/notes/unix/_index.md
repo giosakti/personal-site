@@ -9,6 +9,22 @@ authors: ["gio"]
 find <path> -name <filename>
 ```
 
+#### Find largest files
+
+```
+# List all files bigger than 100M
+find / -xdev -type f -size +100M
+
+# List all files bigger than 100M + details
+find / -xdev -type f -size +100M -exec ls -la {} \; | sort -nk 5
+
+# List top 50 files bigger than 100M, sort from the largest
+find / -xdev -type f -size +100M -exec du -sh {} ';' | sort -rh | head -n50
+```
+
+References:
+- https://unix.stackexchange.com/questions/140367/finding-all-large-files-in-the-root-filesystem
+
 #### Clear Memory Cache & Buffer
 
 ```
