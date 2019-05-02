@@ -23,3 +23,12 @@ See: [here](https://stackoverflow.com/questions/18870775/how-to-change-the-templ
 #### Useful queries for monitoring
 
 See: [here](https://github.com/nilenso/postgresql-monitoring)
+
+#### Autovacuum
+
+Autovacuum should be turned off for high volume DB in postgres (by default it's on).
+
+> Autovacuum works well when configured correctly. However its default configuration is appropriate for databases of a few hundred megabytes in size, and is not aggressive enough for larger databases. In production environments it starts to fall behind. 
+
+References:
+- https://www.citusdata.com/blog/2016/11/04/autovacuum-not-the-enemy/
