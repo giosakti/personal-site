@@ -9,12 +9,13 @@ All past events that I attended as speaker including the presentation materials 
 
 #### Upcoming Events
 
-- [20190417 - **Pathfinder - Building a Container Platform in Ruby Ecosystem** - RubyKaigi 2019](https://rubykaigi.org/2019/speakers)
+- 20190906 - How to Discourage your Boss from Using Kubernetes - RubyConfTH 2019
 
 #### Past Events
 
 **2019**
 
+- [20190417 - **Pathfinder - Building a Container Platform in Ruby Ecosystem** - RubyKaigi 2019](https://rubykaigi.org/2019/speakers)
 - [20190131 - Why people are saying ruby is slow? - id_ruby Meetup January 2019](https://www.meetup.com/id-ruby/events/258108712/)
 
 **2018**
