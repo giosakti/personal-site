@@ -26,6 +26,7 @@ My personal scratchpad.
 - <a href="puma">Puma</a>
 - <a href="ruby">Ruby</a>
 - <a href="ssl">SSL</a>
+- <a href="tcp_http">TCP & HTTP</a>
 - <a href="ubuntu">Ubuntu</a>
 - <a href="unix">Unix</a>
 - <a href="vagrant">Vagrant</a>
