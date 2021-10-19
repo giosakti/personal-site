@@ -16,3 +16,7 @@ authors: ["gio"]
 - This effort will have at least 2 benefits:
   - If later down the line we want to make our app multi-tenant.
   - If we want to reuse same DB for different environment.
+
+#### Ping or Liveness/Readiness Probe
+
+- It's generally a good practice to ensure all services have ping or liveness/readiness probe that also read or write from database
