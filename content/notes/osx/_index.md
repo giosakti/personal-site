@@ -18,5 +18,6 @@ sudo pmset -b tcpkeepalive 0
 ```
 
 References:
+
 - https://forums.macrumors.com/threads/battery-dies-in-sleep-since-macos-upgrade.2115680/
 - https://apple.stackexchange.com/questions/334202/macbook-pro-2018-switch-from-sleep-to-darkwake-in-loop-how-to-diagnose
