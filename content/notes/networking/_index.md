@@ -10,6 +10,7 @@ authors: ["gio"]
 - Other options is to use [tcpick(8)](https://linux.die.net/man/8/tcpick)
 
 References:
+
 - [A tcpdump Tutorial with Examples — 50 Ways to Isolate Traffic](https://danielmiessler.com/study/tcpdump/)
 
 #### Linux ftrace TCP Retransmit Tracing
@@ -17,6 +18,7 @@ References:
 - We can use [tcpretrans](https://github.com/brendangregg/perf-tools/blob/master/net/tcpretrans) part of [perf-tools](https://github.com/brendangregg/perf-tools) that is maintained by Brendan Gregg
 
 References:
+
 - [Brendan Gregg's Blog - Linux ftrace TCP Retransmit Tracing](https://www.brendangregg.com/blog/2014-09-06/linux-ftrace-tcp-retransmit-tracing.html)
 
 #### Monitor TCP Accept Queue Length and Overflows
@@ -42,6 +44,7 @@ $ ss -n state syn-recv sport = :80 | wc -l
 ```
 
 References:
+
 - [How can I monitor the length of the accept queue?](https://unix.stackexchange.com/questions/328746/how-can-i-monitor-the-length-of-the-accept-queue)
 - [Investigating Linux Network Issues with netstat and nstat](https://perfchron.com/2015/12/26/investigating-linux-network-issues-with-netstat-and-nstat/)
 - [How TCP backlog works in Linux](http://veithen.io/2014/01/01/how-tcp-backlog-works-in-linux.html)

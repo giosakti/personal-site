@@ -56,7 +56,8 @@ helm install --values=myvals.yaml <CHART-NAME>
 helm install --debug --dry-run --values=myvals.yaml <PATH-OR-CHART-NAME>
 ```
 
-References
+References:
+
 - https://docs.helm.sh/chart_template_guide
 - https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md
 

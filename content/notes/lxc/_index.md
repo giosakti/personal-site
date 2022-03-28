@@ -171,6 +171,7 @@ sudo systemctl reload snap.lxd.daemon
 ```
 
 References:
+
 - https://github.com/lxc/lxd/issues/3158
 - https://github.com/lxc/lxd/issues/4947
 - https://github.com/lxc/lxd/issues/5187

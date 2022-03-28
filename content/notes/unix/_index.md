@@ -23,6 +23,7 @@ find / -xdev -type f -size +100M -exec du -sh {} ';' | sort -rh | head -n50
 ```
 
 References:
+
 - https://unix.stackexchange.com/questions/140367/finding-all-large-files-in-the-root-filesystem
 
 #### Clear Memory Cache & Buffer
