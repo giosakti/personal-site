@@ -5,10 +5,12 @@ authors: ["gio"]
 
 #### Common Commands
 
+```
 postgres=# CREATE ROLE pathfinder_mono;
 postgres=# ALTER ROLE pathfinder_mono WITH LOGIN;
 postgres=# ALTER ROLE pathfinder_mono WITH SUPERUSER;
 postgres=# ALTER ROLE pathfinder_mono WITH PASSWORD 'pathfinder_mono';
+```
 
 #### Creating new database with specified collation
 
