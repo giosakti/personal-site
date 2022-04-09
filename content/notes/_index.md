@@ -11,6 +11,7 @@ My personal scratchpad.
 - <a href="consul">Consul</a>
 - <a href="datadog">Datadog</a>
 - <a href="elk">ELK</a>
+- <a href="engineering-management">Engineering Management</a>
 - <a href="gcp">GCP</a>
 - <a href="golang">Golang</a>
 - <a href="haproxy">HAProxy</a>

@@ -53,3 +53,7 @@ References:
 #### On HTTP
 
 - [HTTP Keep-Alive, Pipelining, Multiplexing and Connection Pooling](https://www.haproxy.com/blog/http-keep-alive-pipelining-multiplexing-and-connection-pooling/)
+
+#### References
+
+- [How to Get to the Bottom of Network Timeout Issues](https://www.alibabacloud.com/blog/595248)

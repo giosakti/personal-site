@@ -35,3 +35,9 @@ Autovacuum should be turned off for high volume DB in postgres (by default it's 
 References:
 
 - https://www.citusdata.com/blog/2016/11/04/autovacuum-not-the-enemy/
+
+#### References
+
+- [Things I Wished More Developers Knew About Databases](https://rakyll.medium.com/things-i-wished-more-developers-knew-about-databases-2d0178464f78)
+- [Useful Queries for PostgreSQL Index Maintenance](https://www.percona.com/blog/2020/03/31/useful-queries-for-postgresql-index-maintenance/)
+- [PostgreSQL Monitoring for Application Developers: The DBA Fundamentals](https://blog.crunchydata.com/blog/postgresql-monitoring-for-application-developers-dba-stats)
