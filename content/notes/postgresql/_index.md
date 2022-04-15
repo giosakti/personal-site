@@ -6,10 +6,19 @@ authors: ["gio"]
 #### Common Commands
 
 ```
-postgres=# CREATE ROLE pathfinder_mono;
-postgres=# ALTER ROLE pathfinder_mono WITH LOGIN;
-postgres=# ALTER ROLE pathfinder_mono WITH SUPERUSER;
-postgres=# ALTER ROLE pathfinder_mono WITH PASSWORD 'pathfinder_mono';
+CREATE ROLE pathfinder_mono;
+ALTER ROLE pathfinder_mono WITH LOGIN;
+ALTER ROLE pathfinder_mono WITH SUPERUSER;
+ALTER ROLE pathfinder_mono WITH PASSWORD 'pathfinder_mono';
+
+SHOW max_connections;
+SELECT COUNT(*) FROM pg_stat_activity;
+SELECT pid, usename, application_name, backend_start, state_change, state FROM pg_stat_activity where state='idle';
+SELECT pg_terminate_backend(PID);
+ALTER system SET max_connections = 1000;
+
+SET SESSION idle_in_transaction_session_timeout = '5min';
+ALTER DATABASE SET idle_in_transaction_session_timeout = '5min'
 ```
 
 #### Creating new database with specified collation
