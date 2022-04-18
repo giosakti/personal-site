@@ -11,6 +11,7 @@ To solve this, we need to:
 
 1. Revert the removal of the existing resource/module
 2. In `version.tf` ensure that we have proper mapping of required providers, for example if we use Google:
+
 ```
 terraform {
   required_providers {
@@ -23,7 +24,6 @@ terraform {
 }
 
 ```
-
 3. Plan and then apply, even if there's no changes
 4. Try removing the resource/module again and then plan & apply
 
