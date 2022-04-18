@@ -29,6 +29,7 @@ My personal scratchpad.
 - <a href="ruby">Ruby</a>
 - <a href="security">Security</a>
 - <a href="ssl">SSL</a>
+- <a href="terraform">Terraform</a>
 - <a href="unix">Unix</a>
 - <a href="vagrant">Vagrant</a>
 - <a href="zfs">ZFS</a>
