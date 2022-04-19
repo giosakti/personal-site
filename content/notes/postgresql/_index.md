@@ -49,6 +49,12 @@ ALTER DATABASE SET idle_in_transaction_session_timeout = '5min'
 
 #### Indexing
 
+Important considerations when creating index:  
+1. Understand the characteristics of index data structure that we are using. For example in Postgres, there are: B-tree (default), GIN, GIST and others.
+2. Index ordering matters, depending on the query it might be a good idea to put more specific column at the front so that we get a flatter b-tree structure.
+3. Use `CONCURRENTLY` to avoid table lock during index creation (but the craetion process will be slower).
+
+Additional references:  
 - [Indexing in Postgres](https://medium.com/geekculture/indexing-in-postgres-db-4cf502ce1b4e)
 - [GIN Index](https://pganalyze.com/blog/gin-index)
 - [How to Create pg_trgm compound indexes](https://dba.stackexchange.com/questions/196053/how-to-create-pg-trgm-compound-indexes-with-date-columns)
