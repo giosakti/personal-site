@@ -74,7 +74,8 @@ cd kafka-manager-1.3.3.8
 
 If we encountered the above issues, it is likely because the time a consumer take to process all the records that are fetched after `poll()` action took longer than `max.poll.inernal.ms` configuration. This means the consumer do not call `poll()` frequently enough that it is considered inactive by the broker.
 
-In order to fix this issues, there are several thing that we can do (in order of priority):
+In order to fix this issues, there are several thing that we can do (in order of priority):  
+
 1. Improve records processing latency if possible
 2. Reduce `max.poll.records` (consumer config) to limit the total records returned from a single call to `poll()`
 3. Increase `max.poll.interval.ms` (consumer config) to allow more time between calls to `poll()`. Note that this might reduce system responsiveness to do rebalancing.
